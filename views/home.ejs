@@ -1,0 +1,10 @@
+<%- include('partials/head') %> 
+<%- include('partials/navbar') %> 
+
+<main>
+  <% if (object.RoomEntered === true) { %>
+    <%- include('partials/chatRoom') %>
+  <% } %>
+</main>
+
+<%- include('partials/footer') %> 

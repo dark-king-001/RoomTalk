@@ -1,0 +1,27 @@
+<div class="list-group">
+    <% for (let i in object.Chats){ %>
+        <% if (object.username === object.Chats[i].sentBy) { %> 
+            <a class="list-group-item list-group-item-action list-group-item-primary" style="display: flex;flex-direction: row-reverse;">
+                sent By :: <%= object.Chats[i].sentBy %> :: <%= object.Chats[i].Date %>  
+                <br>
+                <%= object.Chats[i].body %> 
+                <br>
+            </a>
+        <% } else { %> 
+            <a class="list-group-item list-group-item-action">
+                sent By :: <%= object.Chats[i].sentBy %> :: <%= object.Chats[i].Date %>  
+                <br>
+                <%= object.Chats[i].body %> 
+                <br>
+            </a>
+        <% } %> 
+    <% } %> 
+  </div>
+<br><br>
+<form action="/sendMessage" class="form fixed-bottom" method="POST">
+    <div class="input-group">
+      <input type="Message" name="Message" class="form-control rounded" placeholder="Enter Message" aria-label="Search"
+      aria-describedby="search-addon" />
+      <button type="submit" class="btn btn-outline-primary">SEND</button>
+    </div>    
+</form> 
